@@ -1,0 +1,11 @@
+# configure the environment
+cd BaselineIR
+pip install -r requirements.txt
+cd src
+
+# train
+cd /root/autodl-tmp/projects/24-NTIRE-ESR/BaselineIR/src
+python train.py --data_source /root/autodl-tmp/datasets/24-NTIRE-ESR --experiment baseline1_feat36 --crop 96 --n_epochs 400 --train_bs 32
+
+# infer
+we use We use the code provided by the organizer for inference. link: https://github.com/Amazingren/NTIRE2024_ESR
