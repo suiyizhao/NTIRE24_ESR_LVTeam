@@ -28,9 +28,12 @@ def select_model(args, device):
         model = RLFN_Prune()
         model.load_state_dict(torch.load(model_path), strict=True)
 
-    # elif model_id == 1:
-    #     from models.team[Your_Team_ID]_[Model_Name] import [Model_Name]
-    #     ...
+    elif model_id == 16:
+        from models.team16_LightRLFN import LightRLFN
+        name, data_range = f"{model_id:02}_LightRLFN_baseline", 1.0
+        model_path = os.path.join('model_zoo', 'team16_LightRLFN.pth')
+        model = LightRLFN()
+        model.load_state_dict(torch.load(model_path), strict=True)
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 
